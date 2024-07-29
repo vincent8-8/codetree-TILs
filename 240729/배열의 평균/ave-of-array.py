@@ -4,13 +4,13 @@ list_2d = [
 ]
 
 for i in range(2):
-    print(sum(list_2d[i])/4, end=" ")
+    print(round(sum(list_2d[i])/4, 1), end=" ")
 
 print()
 
 for j in range(4):
-    print((list_2d[0][j] + list_2d[1][j])/2, end=" ")
+    print(round((list_2d[0][j] + list_2d[1][j])/2, 1), end=" ")
 
 print()
 
-print((sum(list_2d[0]) + sum(list_2d[1])) / 8)
+print(round((sum(list_2d[0]) + sum(list_2d[1])), 1) / 8)
