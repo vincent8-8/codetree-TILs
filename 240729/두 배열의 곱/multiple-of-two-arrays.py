@@ -8,10 +8,8 @@ arr2_2d = [
     for _ in range(3)
 ]
 
-for i in range(2):
-    for j in range(2):
-        print(arr1_2d[i][j])
-        print(arr2_2d[i][j])
+for i in range(3):
+    for j in range(3):
         print(arr1_2d[i][j] * arr2_2d[i][j], end = " ")
 
     print()
