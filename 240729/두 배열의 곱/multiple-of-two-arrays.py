@@ -2,7 +2,9 @@ arr1_2d = [
     list(map(int, input().split(" ")))
     for _ in range(3)
 ]
+
 input()
+
 arr2_2d = [
     list(map(int, input().split(" ")))
     for _ in range(3)
