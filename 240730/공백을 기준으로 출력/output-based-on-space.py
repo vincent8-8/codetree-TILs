@@ -1,14 +1,8 @@
 str1 = input()
 str2 = input()
 
-for elem in str1:
-    if elem == '\n':
-        pass
-    else: 
-        print(elem, end="")
+str1 = str1.replace(" ","")
+str2 = str2.replace(" ","")
 
-for elem in str2:
-    if elem == '\n':
-        pass
-    else: 
-        print(elem, end="")
+print(str1, end="")
+print(str2, end="")
