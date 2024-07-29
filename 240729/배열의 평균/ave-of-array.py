@@ -13,4 +13,4 @@ for j in range(4):
 
 print()
 
-print(round((sum(list_2d[0]) + sum(list_2d[1])), 1) / 8)
+print(round((sum(list_2d[0]) + sum(list_2d[1])) / 8, 1))
