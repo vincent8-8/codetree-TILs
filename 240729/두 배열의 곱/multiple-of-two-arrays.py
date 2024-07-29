@@ -1,5 +1,5 @@
 arr1_2d = [
-    list(map(int, input().split()))
+    list(map(int, input().split(" ")))
     for _ in range(3)
 ]
 input()
