@@ -9,7 +9,7 @@ else:
     for _ in range(n):
         index = int(input())
 
-        if index < n:
+        if index < len(arr):
             arr.pop(index)
             print("".join(arr))
         else:
