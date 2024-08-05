@@ -1,7 +1,7 @@
 a = input()
 b = input()
 
-index = 1
+index = a.find(b)
 
 while index != -1:
     index = a.find(b)
