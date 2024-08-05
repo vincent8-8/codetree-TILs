@@ -1,8 +1,6 @@
 c = input()
 
-n = ord(c) + 1
-
-if ord('z') < n:
-    print(chr(n + ord(a) - ord(z)))
+if c == 'z':
+	print("a")
 else:
-    print(chr(n))
+	print(chr(ord(c) + 1))
