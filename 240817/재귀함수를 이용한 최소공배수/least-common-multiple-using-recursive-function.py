@@ -1,6 +1,6 @@
 l = int(input())
 _list = list(map(int, input().split()))
-step = min(_list)
+step = max(_list)
 
 def f(n):
     for i in range(0, l):
@@ -10,4 +10,4 @@ def f(n):
     return n
 
 
-print(f(1))
+print(f(step))
