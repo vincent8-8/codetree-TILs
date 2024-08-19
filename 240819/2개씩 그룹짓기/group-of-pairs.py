@@ -6,6 +6,7 @@ _list_reverse = _list[::-1]
 min_max = 0
 
 for i in range(n // 2 + 1):
-    if min_max < _list[i] + _list_reverse[i]:
-        min_max = _list[i] + _list_reverse[i]
+    _sum = _list[i] + _list_reverse[i]
+    if min_max < _sum:
+        min_max = _sum
 print(min_max)
