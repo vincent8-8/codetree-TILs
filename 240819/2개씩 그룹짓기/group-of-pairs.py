@@ -5,7 +5,7 @@ _list = sorted(_list)
 _list_reverse = _list[::-1]
 min_max = 0
 
-for i in range(n // 2 + 1):
+for i in range((2 * n) // 2):
     _sum = _list[i] + _list_reverse[i]
     if min_max < _sum:
         min_max = _sum
