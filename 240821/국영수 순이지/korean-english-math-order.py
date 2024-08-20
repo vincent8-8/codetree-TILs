@@ -4,7 +4,7 @@ _list = [
     for _ in range(n)
 ]
 
-_list.sort(key=lambda x: (-x[1], -x[2], -x[3]))
+_list.sort(key=lambda x: (-int(x[1]), -int(x[2]), -int(x[3])))
 
 for name, kor, eng, math in _list:
     print(name, kor, eng, math)
