@@ -28,10 +28,8 @@ index = 0
 if len(r_days) == 1:
     pass
 else:
-    for i in range(len(r_days) - 1):
-        if r_days[i].date < r_days[i + 1].date:
+    for i in range(len(r_days)):
+        if r_days[i].date < r_days[index].date:
             index = i
-        else:
-            index = i + 1
 
 print(r_days[index].date, r_days[index].w_day, r_days[index].weather)
