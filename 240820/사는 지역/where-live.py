@@ -22,7 +22,7 @@ for i in range(n):
 
     if cs[i].name > cs[index].name:
         index = i
-
-print(f"name {cs[i].name}")
-print(f"addr {cs[i].num}")
-print(f"city {cs[i].location}")
+        
+print(f"name {cs[index].name}")
+print(f"addr {cs[index].num}")
+print(f"city {cs[index].location}")
