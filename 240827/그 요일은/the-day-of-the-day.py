@@ -19,12 +19,10 @@ elapsed_days_2 += d2
 diff = elapsed_days_2 - elapsed_days_1
 answer = diff // 7
 
-index = 1
+index = days.index(day)
+
 for i in range(diff % 7):
-    index += 1
-    if days[index] == day:
+    if (i + 2) % 7 == index:
         answer += 1
-    if index > 6:
-        index -= 7
 
 print(answer)
