@@ -19,7 +19,7 @@ if elapsed_2 - elapsed_1 > 0:
     for _ in range(elapsed_2 - elapsed_1):
         index += 1
         if index > 6:
-            index -= 6
+            index -= 7
 elif elapsed_2 - elapsed_1 < 0:
     for _  in range(abs(elapsed_2 - elapsed_1)):
         index -= 1
