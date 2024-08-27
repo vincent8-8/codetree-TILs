@@ -1,6 +1,6 @@
 n = int(input())
-blocks = [ [0, 0, 0] for _ in range(10001)]
-start = 5000
+blocks = [ [0, 0, 0] for _ in range(20001)]
+start = 10000
 
 for _ in range(n):
     x, direction = input().split()
@@ -25,7 +25,7 @@ cnt_gray = 0
 cnt_black = 0 
 cnt_white = 0
 
-for i in range(10001):
+for i in range(20001):
     if blocks[i][1] >= 2 and blocks[i][2] >= 2:
         cnt_gray += 1
     elif blocks[i][0] == 1:
