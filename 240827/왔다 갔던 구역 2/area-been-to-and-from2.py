@@ -7,21 +7,26 @@ for _ in range(n):
     x, direction = input().split()
     
     if direction == "L":
+
         if pre == "R":
-            blocks[start] -= 1
+            start -= 1
 
         for _ in range(int(x)):
             blocks[start] += 1 
             start -= 1
+
         pre = "L"
 
     else:
+
         if pre == "L":
-            blocks[start] -= 1
-            
+            start += 1
+
         for _ in range(int(x)):
             blocks[start] += 1
             start += 1
+
+        pre = "R"
 
 cnt = 0
 
