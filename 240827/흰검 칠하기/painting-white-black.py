@@ -1,6 +1,6 @@
 n = int(input())
 blocks = [ [0, 0, 0] for _ in range(2001)]
-start = 500
+start = 1000
 
 for _ in range(n):
     x, direction = input().split()
