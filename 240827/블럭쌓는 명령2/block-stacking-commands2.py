@@ -8,7 +8,7 @@ _list = [
 blocks = [0] * n
 
 for elem in _list:
-    for i in range(elem[0], elem[1]+1):
+    for i in range(elem[0]-1, elem[1]):
         blocks[i] += 1
 
 print(max(blocks))
