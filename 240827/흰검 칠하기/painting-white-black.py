@@ -1,5 +1,5 @@
 n = int(input())
-blocks = [ [0, 0, 0] for _ in range(1001)]
+blocks = [ [0, 0, 0] for _ in range(2001)]
 start = 500
 
 for _ in range(n):
@@ -25,7 +25,7 @@ cnt_gray = 0
 cnt_black = 0 
 cnt_white = 0
 
-for i in range(1001):
+for i in range(2001):
     if blocks[i][1] >= 2 and blocks[i][2] >= 2:
         cnt_gray += 1
     elif blocks[i][0] == 1:
