@@ -32,13 +32,13 @@ for i in range(0, MAX_R):
                 y1 = j
 
         if graph[i][j] == 1:
-            x2 = j
+            x2 = j + 1
         
         if graph[j][i] == 1:
-            y2 = j
+            y2 = j + 1
 
-    distance_x = x2 - x1 + 1
-    distance_y = y2 - y1 + 1
+    distance_x = x2 - x1
+    distance_y = y2 - y1
 
     if max_distance_x < distance_x:
         max_distance_x = distance_x
