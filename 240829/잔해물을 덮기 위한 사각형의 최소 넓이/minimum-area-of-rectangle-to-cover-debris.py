@@ -13,23 +13,36 @@ for i in range(b_x1 + OFFSET, b_x2 +OFFSET):
     for j in range(b_y1 + OFFSET, b_y2 + OFFSET):
         graph[i][j] = 0
 
-max_continued_x = 0
-max_continued_y = 0
+max_distance_x = 0
+max_distance_y = 0
 
 for i in range(0, MAX_R):
-    continued_x = 0
-    continued_y = 0
+    distance_x = 0
+    distance_y = 0
+    x1, x2, y1, y2 = -1, -1, -1, -1
 
     for j in range(0, MAX_R):
+
+        if x1 == -1:
+            if graph[i][j] == 1:
+                x1 = j
+        
+        if y1 == -1:
+            if graph[j][i] == 1:
+                y1 = j
+
         if graph[i][j] == 1:
-            continued_x += 1
+            x2 = j
         
         if graph[j][i] == 1:
-            continued_y += 1
+            y2 = j
 
-    if max_continued_x < continued_x:
-        max_continued_x = continued_x
-    if max_continued_y < continued_y:
-        max_continued_y = continued_y
+    distance_x = x2 - x1 + 1
+    distance_y = y2 - y1 + 1
+
+    if max_distance_x < distance_x:
+        max_distance_x = distance_x
+    if max_distance_y < distance_y:
+        max_distance_y = distance_y
     
-print(max_continued_x * max_continued_y)
+print(max_distance_x * max_distance_y)
