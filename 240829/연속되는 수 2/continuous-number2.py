@@ -21,6 +21,6 @@ for i in range(n):
     cnt += 1
 
 if(max_cnt == 0):
-    print("1")
+    print(cnt)
 else:
     print(max_cnt)
