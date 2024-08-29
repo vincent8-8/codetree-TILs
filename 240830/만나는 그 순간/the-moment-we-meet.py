@@ -45,3 +45,4 @@ while pos_A:
         cnt += 1
         print(cnt)
         break
+print("-1")
