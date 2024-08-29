@@ -13,5 +13,6 @@ for i in range(n):
     else:
         if max_cnt < cnt:
             max_cnt = cnt
+            cnt = 0
     
 print(max_cnt)
