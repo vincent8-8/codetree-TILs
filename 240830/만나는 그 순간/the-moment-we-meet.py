@@ -44,5 +44,7 @@ while pos_A:
     if pos_A.pop(0) == pos_B.pop(0):
         cnt += 1
         print(cnt)
+        cnt = -1
         break
-print("-1")
+if cnt != -1:
+    print("-1")
