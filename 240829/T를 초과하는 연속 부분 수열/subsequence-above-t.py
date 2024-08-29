@@ -5,21 +5,25 @@ cnt = 0
 max_cnt = 0
 
 for i in range(n):
+
     if i == 0:
-        cnt = 1
+
+        if _list[0] > t:
+            cnt = 1
+        else:
+            cnt = 0
+
         continue
     
-    if _list[i] <= t or _list[i - 1] <= 3:
+    if _list[i] <= t:
         if max_cnt < cnt:
             max_cnt = cnt
-        cnt = 1
+        cnt = 0
         continue
     
     cnt += 1
 
-if max(_list) <= t:
-    print("0")
-elif(max_cnt == 0):
+if(max_cnt == 0):
     print(cnt)
 else:
     print(max_cnt)
