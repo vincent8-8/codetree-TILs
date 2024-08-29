@@ -17,7 +17,9 @@ for i in range(n):
     
     cnt += 1
 
-if(max_cnt == 0):
+if max(_list) <= t:
+    print("0")
+elif(max_cnt == 0):
     print(cnt)
 else:
     print(max_cnt)
