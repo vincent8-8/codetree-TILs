@@ -13,5 +13,8 @@ for i in range(n):
             max_cnt = cnt
             cnt = 0
     cnt += 1
-    
-print(max_cnt)
+
+if(max_cnt == 0):
+    print("1")
+else:
+    print(max_cnt)
