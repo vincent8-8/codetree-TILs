@@ -21,6 +21,7 @@ for q in qs:
     if x == OFFSET and y == OFFSET:
         print(time)
         returned = True
+        break
 
 if not returned:
     print("-1")
