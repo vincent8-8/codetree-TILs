@@ -11,7 +11,15 @@ graph = [
 k = int(input())
 
 dxs, dys = [-1, 0, 1, 0], [0, -1, 0, 1]  # U L D R
-dir_num = (((k - 1) // n) + 2) % 4
+cal = (k - 1) // n
+if cal == 0:
+    dir_num = 2
+elif cal == 1:
+    dir_num = 1
+elif cal == 2:
+    dir_num = 0
+else:
+    dir_num = 3
 x, y = 0, 0
 
 if ((k - 1) // n) % 2 == 0:
