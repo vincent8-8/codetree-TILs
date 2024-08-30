@@ -37,7 +37,6 @@ cnt = 0
 while (i < n) or (j < m):
     A = pos_A[i]
     B = pos_B[j]
-    print(i, j)
 
     if A == B:
         cnt += 1
