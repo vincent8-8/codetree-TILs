@@ -21,7 +21,6 @@ for _ in range(t):
     if in_range(nx, ny):
         x, y = nx, ny
     else:
-        dir_num = (dir_num + 3) % 4
-
+        dir_num = (3 - dir_num) % 4
 
 print(x, y)
