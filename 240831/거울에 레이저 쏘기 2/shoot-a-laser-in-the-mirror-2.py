@@ -10,8 +10,8 @@ graph = [
 
 k = int(input())
 
-dxs, dys = [-1, 0, 1, 0], [0, -1, 0, 1]  # D L U R
-dir_num = (k - 1) // n
+dxs, dys = [-1, 0, 1, 0], [0, -1, 0, 1]  # U L D R
+dir_num = (((k - 1) // n) + 2) % 4
 x, y = 0, 0
 
 if ((k - 1) // n) % 2 == 0:
@@ -26,18 +26,27 @@ else:
         x, y = (n - 1) - ((k - 1) % n), 0
 
 keep_going = True
-cnt = 0
+cnt = 1
+
 
 while keep_going:
     if graph[x][y] == "/":
+        if dir_num == 3 or dir_num == 1:
             dir_num = (dir_num + 1) % 4
+        else:
+            dir_num = (dir_num + 3) % 4
     else:
-        dir_num = (dir_num + 3) % 4
+        if dir_num == 0 or dir_num == 2:
+            dir_num = (dir_num + 1) % 4
+        else:
+            dir_num = (dir_num + 3) % 4
     
     nx, ny = (x + dxs[dir_num]), (y + dys[dir_num])
 
+
     if in_range(nx, ny):
         cnt += 1
+        x, y = nx, ny
     else:
         keep_going = False
     
