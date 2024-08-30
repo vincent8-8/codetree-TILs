@@ -37,8 +37,12 @@ cnt = 0
 while (i < n) or (j < m):
     A = pos_A[i]
     B = pos_B[j]
+    print(i, j)
 
-    if A < B:
+    if A == B:
+        cnt += 1
+        left = ""
+    elif A < B:
         if left == "B":
             cnt += 1
         left = "A"
