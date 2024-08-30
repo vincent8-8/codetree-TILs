@@ -1,9 +1,9 @@
 def in_range(x, y):
-    return 0 <= x and x < n and 0 <= y and y < n
+    return 0 <= x and x < n and 0 <= y and y < m
 
 n, m = map(int, input().split())
 
-graph = [ [0] * n for _ in range(m)]
+graph = [ [0] * m for _ in range(n)]
 graph[0][0] = 1
 
 dxs, dys = [0, -1, 0, 1], [1, 0, -1, 0]
@@ -20,7 +20,6 @@ while True:
         x, y = nx, ny
     else:
         dir_num = (dir_num + 1) % 4
-
     if num > n * m:
         break
 
