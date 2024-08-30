@@ -26,25 +26,19 @@ else:
         x, y = (n - 1) - ((k - 1) % n), 0
 
 keep_going = True
-cnt = 1
+cnt = 0
 
 while keep_going:
     if graph[x][y] == "/":
-        if dir_num == 1 or dir_num == 3:
-            dir_num = (dir_num + 3) % 4
-        else:
             dir_num = (dir_num + 1) % 4
     else:
-        if dir_num == 0 or dir_num == 2:
-            dir_num = (dir_num + 3) % 4
-        else:
-            dir_num = (dir_num + 1) % 4
+        dir_num = (dir_num + 3) % 4
     
     nx, ny = (x + dxs[dir_num]), (y + dys[dir_num])
+
     if in_range(nx, ny):
         cnt += 1
     else:
-        cnt += 1
         keep_going = False
     
 print(cnt)
