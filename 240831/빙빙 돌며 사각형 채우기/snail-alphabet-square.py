@@ -1,4 +1,4 @@
-OFFSET = 64
+OFFSET = 65
 n, m = map(int, input().split())
 graph = [[0] * m for _ in range(n)]
 
@@ -10,9 +10,9 @@ dir_num = 0
 graph[0][0] = 'A'
 x, y = 0, 0
 
-i = 2
+i = 1
 
-while i <= n * m:
+while i < n * m:
     nx, ny = x + dxs[dir_num], y + dys[dir_num]
 
     if in_range(nx, ny) and graph[nx][ny] == 0:
