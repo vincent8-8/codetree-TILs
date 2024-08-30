@@ -5,7 +5,7 @@ r, c, d = input().split()
 def in_range(x, y):
     return 1 <= x and x < n + 1 and 1 <= y and y < n + 1
 
-dxs, dys = [0, -1, 1, 0], [-1, 0, 0, 1]
+dxs, dys = [0, 1, -1, 0], [-1, 0, 0, 1]
 mapper = {
     "L" : 0,
     "D" : 1,
