@@ -15,7 +15,7 @@ for i in range(1, r):
                     if _list[k][l] == curr_color:
                         cnt += 1
                         break
-if c % 2 == 1:
+if _list[0][0] == _list[r - 1][c - 1]:
     print("0")
 else:
     print(cnt)
