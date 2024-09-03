@@ -42,5 +42,8 @@ for i in range(n):
 
     if _cnt == 2 and _sum >_max_sum:
         _max_sum = _sum
-
-print(_max_sum)
+        
+if _max_sum == 0:
+    print("-1")
+else:
+    print(_max_sum)
