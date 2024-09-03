@@ -19,13 +19,13 @@ for i in range(n):
         condition = True
         
         if _length_A >= _length_B:
-            for k in range(-1, -(_length_B), -1):
+            for k in range(-1, -(_length_B) - 1, -1):
                 _tmp = int(_sum[k]) + int(_list[j][k])
                 if _tmp > 9:
                     condition = False
                     break
         else:
-            for k in range(-1, -(_length_A), -1):
+            for k in range(-1, -(_length_A) - 1, -1):
                 _tmp = int(_sum[k]) + int(_list[j][k])
                 if _tmp > 9:
                     condition = False
@@ -42,7 +42,7 @@ for i in range(n):
 
     if _cnt == 2 and _sum >_max_sum:
         _max_sum = _sum
-        
+
 if _max_sum == 0:
     print("-1")
 else:
