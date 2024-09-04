@@ -88,3 +88,6 @@ for i in range(19):
                 if find_answer:
                     print(find_answer)
                     print(i + 3, j + 1)
+
+if not find_answer:
+    print("0")
