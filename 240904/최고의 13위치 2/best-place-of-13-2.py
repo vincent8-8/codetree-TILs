@@ -22,13 +22,17 @@ for i in range(n):
         
         history.append(tuple((cnt, i, j)))
 
-history.sort(key=lambda x: -x[0])
+length = len(history)
+max_coins = 0
 
-answer = history[0][0]
+for i in range(length):
+    for j in range(i + 1, length):
+        coins = 0
 
-for coins, x, y in history:
-    if (history[0][2] + 2) < y or (y + 2) < history[0][2] or x != history[0][1]:
-        answer += coins
-        break
+        if ( (history[i][2] + 2) < (history[j][2]) ) or ( history[i][2] > history[j][2] + 2 ) or ( history[i][1] != history[j][1] ):
+            coins = history[i][0] + history[j][0]
+        
+        if max_coins < coins:
+            max_coins = coins
 
-print(answer)
+print(max_coins)
