@@ -9,9 +9,9 @@ for _ in range(n):
 
 for i in range(101):
     for j in range(101):
-        if i + j > 101:
+        if i + j >= 101:
             break
-        elif _list[i] == "" or _list[i + j - 1] == "":
+        elif _list[i] == "" or _list[i + j] == "":
             continue
 
         tmp_list = _list[i : i + j + 1]
@@ -25,4 +25,4 @@ for i in range(101):
         
         max_len = max(max_len, length)
 
-print(max_len - 1)
+print(max_len)
