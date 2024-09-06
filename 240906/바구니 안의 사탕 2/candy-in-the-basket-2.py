@@ -15,19 +15,19 @@ for i in range(0, 101):
         for j in range(0, i + k + 1):
             if _list[j] == 0:
                 continue
-        cnt += _list[j]
+            cnt += _list[j]
 
-    elif i + k > 100:
+    elif i + k >= 100:
         for j in range(i - k, 101):
             if _list[j] == 0:
                 continue
-        cnt += _list[j]
-        
+            cnt += _list[j]
+
     else:
-        for j in range(i, i + (2 * k) + 1):
+        for j in range(i - k, i + k + 1):
             if _list[j] == 0:
                 continue
-        cnt += _list[j]
+            cnt += _list[j]
 
     max_cnt = max(max_cnt, cnt)
 
