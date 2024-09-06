@@ -1,6 +1,7 @@
 n, m = map(int, input().split())
 A_list = list(map(int, input().split()))
 B_list = list(map(int, input().split()))
+B_list.sort()
 cnt = 0
 
 for i in range(n - m + 1):
