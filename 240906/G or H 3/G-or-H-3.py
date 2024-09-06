@@ -13,7 +13,6 @@ for i in range(10000 - k):
             score += 1
         elif _list[j] == "H":
             score += 2
-    if score != 0:
-        max_score = max(max_score, score)
+    max_score = max(max_score, score)
 
 print(max_score)
