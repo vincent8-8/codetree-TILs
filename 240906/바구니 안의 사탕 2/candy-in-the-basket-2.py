@@ -4,7 +4,7 @@ max_cnt = 0
 
 for _ in range(n):
     candies, idx = map(int, input().split())
-    _list[idx] = candies
+    _list[idx] += candies
  
 for i in range(0, 101):
     cnt = 0
