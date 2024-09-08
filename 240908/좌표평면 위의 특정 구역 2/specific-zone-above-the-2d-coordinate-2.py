@@ -7,13 +7,17 @@ _list = [
 area = 0
 min_area = sys.maxsize
 
-for _ in range(n):
-    except_dot = _list.pop(0)
-    
-    h = max(_list[0][1], _list[1][1], _list[2][1]) - min(_list[0][1], _list[1][1], _list[2][1])
-    w = max(_list[0][0], _list[1][0], _list[2][0]) - min(_list[0][0], _list[1][0], _list[2][0])
-    area = h * w
+for i in range(n):
+    _list.sort(key=lambda x: x[0])
+    except_dot = _list.pop(i)
 
+    w = _list[-1][0] - _list[0][0]
+
+    _list.sort(key=lambda x: x[1])
+    h = _list[-1][1] - _list[0][1]
+
+    area = w * h
+    
     if area < min_area:
         min_area = area
 
