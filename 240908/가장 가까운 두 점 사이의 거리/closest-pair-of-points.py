@@ -1,9 +1,11 @@
+import sys
+
 n = int(input())
 _list = [
     list(map(int, input().split()))
     for _ in range(n)
 ]
-min_dis = 2002
+min_dis = sys.maxsize
 
 for i in range(n):
     for j in range(n):
