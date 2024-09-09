@@ -14,11 +14,11 @@ for i in range(n):
 for i in range(n):
     for j in range(n):
         for k in range(n):
-            if i == k or i == k or j == k:
+            if i == j or i == k or j == k:
                 continue
             
             if _list[i][0] == _list[j][0] and _list[i][0] != _list[k][0]:
-                if _list[i][1] == _list[k][1] or _list[i][1] != _list[j][1]:
+                if _list[i][1] == _list[k][1] and _list[i][1] != _list[j][1]:
                     area = abs(_list[i][0] - _list[k][0]) * abs( _list[i][1] - _list[j][1])
                     
                     max_area = max(max_area, area)
