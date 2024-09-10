@@ -24,14 +24,14 @@ for i in range(n):
         counter_start = _list[j][0] + OFFSET
         counter_end = _list[j][1] + OFFSET
 
-        if counter_start <= std_start <= counter_end and counter_start <= std_end <= counter_end:
-            is_answer = False
-            break
-        
-        if std_start <= counter_start and counter_end <= std_end:
-            is_answer = False
-            break
-
+        if std_start < counter_start:
+            if counter_end < std_end or counter_end < std_start:
+                is_answer = False
+                break
+        elif std_start > counter_start:
+            if std_end > counter_start:
+                is_answer = False
+                break
     if is_answer:
         cnt += 1
 print(cnt)
