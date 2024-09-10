@@ -24,7 +24,7 @@ for i in range(n):
         counter_start = _list[j][0] + OFFSET
         counter_end = _list[j][1] + OFFSET
 
-        if std_start < counter_start < std_end:
+        if std_start < counter_start:
             if counter_end < std_end or counter_end < std_start:
                 is_answer = False
                 break
