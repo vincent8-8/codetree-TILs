@@ -15,4 +15,7 @@ for i in range(n):
                 explode_bomb = curr_bomb
             
         max_bomb = max(max_bomb, explode_bomb)
-print(max_bomb)
+if not max_bomb == 0:
+    print(max_bomb)
+else:
+    print("-1")
