@@ -23,6 +23,10 @@ for i in range(s):
     for j in range(d):
         if _info[j][0] == people and _info[j][2] >= time:
             cheese[_info[j][1] - 1] = 0
+    
+    for j in range(d):
+        if _info[j][0] == people and _info[j][2] < time and (cheese[_info[j][1] - 1] == 0):
+            cheese[_info[j][1] - 1] = 1
 
 # 둘 중 한명이 먹지 않았다면 제외
 for i in range(m):
@@ -49,14 +53,15 @@ for i in range(m):
         continue
     
     cnt = 0
+    peoples = []
 
     for j in range(d):
-        peoples = []
+   
 
         if _info[j][1] == (i + 1):
-            if _info[j][0] not in peoples: 
+            if _info[j][0] not in peoples:
                 cnt += 1
                 peoples.append(_info[j][0])
-    
+
     max_cnt = max(max_cnt, cnt)
 print(max_cnt)
