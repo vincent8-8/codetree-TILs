@@ -16,10 +16,11 @@ for i in range(n):
         total_prices.append(_list[j][0] + _list[j][1])
 
     total_prices.sort()
+    print(total_prices)
 
     for k in range(n):
         local_sum += total_prices[k]
-        if local_sum >= b:
+        if local_sum > b:
             break
         cnt += 1
 
