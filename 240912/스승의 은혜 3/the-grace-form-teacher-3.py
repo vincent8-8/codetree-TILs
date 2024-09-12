@@ -9,11 +9,10 @@ for i in range(n):
     total_prices = []
     local_sum = 0
     cnt = 0
+    
+    _list[i][0] //= 2
 
     for j in range(n):
-        if i == j:
-            _list[i][0] //= 2
-        
         total_prices.append(_list[j][0] + _list[j][1])
 
     total_prices.sort()
@@ -25,6 +24,7 @@ for i in range(n):
         cnt += 1
 
     max_cnt = max(max_cnt, cnt)
+
     _list[i][0] *= 2
 
 print(max_cnt)
