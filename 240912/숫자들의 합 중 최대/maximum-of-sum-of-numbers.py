@@ -1,13 +1,24 @@
-x, y = map(int, input().split())
-max_sum = 0
+# 변수 선언 및 입력
+x, y = tuple(map(int, input().split()))
 
+
+# 각 자리 숫자의 합을 구하여 반환합니다.
+def digit_sum(n):
+    if n < 10:
+        return n
+    # 두 자리 이상의 숫자라면,
+    # 맨 끝자리를 제외한 숫자들의 합을 재귀적으로 호출한 뒤,
+    # 그 결과가 마지막 자릿수를 더해 반환합니다.
+    else:
+        return digit_sum(n // 10) + (n % 10)
+
+
+ans = 0
+
+# 각 숫자에 대해 
+# 각 자리 숫자의 합을 구해
+# 그 중 최댓값을 계산합니다.
 for i in range(x, y + 1):
-    to_str = str(i)
-    local_sum = 0
-
-    for elem in to_str:
-        local_sum += int(elem)
+    ans = max(ans, digit_sum(i))
     
-    max_sum = max(max_sum, local_sum)
-
-print(max_sum)
+print(ans)
