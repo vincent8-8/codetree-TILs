@@ -33,13 +33,7 @@ def check_answer_all_y(y1, y2, y3):
 
 for i in range(11):
     for j in range(11):
-        if i == j:
-            continue
-
         for k in range(11):
-            if i == k or j == k:
-                continue
-
             if is_answer == 1:
                 break
 
