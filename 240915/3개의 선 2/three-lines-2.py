@@ -26,7 +26,7 @@ def check_answer_all_x(x1, x2, x3):
 
 def check_answer_all_y(y1, y2, y3):
     for x, y in _list:
-        if not x in (y1, y2, y3):
+        if not y in (y1, y2, y3):
             return 0
     return 1
 
