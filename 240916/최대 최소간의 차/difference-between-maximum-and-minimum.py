@@ -22,4 +22,7 @@ for j in range(-1, -(n // 2 + 1), -1):
         _list[j] -= 1
         cost += 1
 
-print(cost)
+if n == 1:
+    print("0")
+else:
+    print(cost)
