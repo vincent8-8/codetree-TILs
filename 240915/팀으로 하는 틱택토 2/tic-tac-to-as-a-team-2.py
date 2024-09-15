@@ -11,7 +11,7 @@ for i in range(3):
     sets.append(set((_graph[0][i], _graph[1][i], _graph[2][i])))
         
 sets.append(set((_graph[0][0], _graph[1][1], _graph[2][2])))
-sets.append(set((_graph[2][2], _graph[1][1], _graph[2][0])))
+sets.append(set((_graph[0][2], _graph[1][1], _graph[2][0])))
 
 answer_list = []
 
