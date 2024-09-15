@@ -1,11 +1,11 @@
 n, k = map(int, input().split())
 _list = list(map(int, input().split()))
 
-avg = round(sum(_list) / n)
+avg = sum(_list) / n
 cost = 0
 
 for i in range(n):
-    for j in range(n):
+    for j in range(i + 1, n):
         if abs(_list[i] - _list[j]) <= k:
             continue
         
@@ -23,5 +23,4 @@ for i in range(n):
                     _list[j] += 1
                 
             cost += 1
-
 print(cost)
