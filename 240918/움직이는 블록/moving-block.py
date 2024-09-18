@@ -5,24 +5,12 @@ _list = [
 ]
 
 avg = sum(_list) // n
-cnt = 0
+blocks = 0
 
-while True:
-    is_changed = False
+for i in range(n):
+    if _list[i] > avg:
+        blocks += 2 * (_list[i] - avg)
+    elif _list[i] < avg:
+        blocks += _list[i] - avg
 
-    for i in range(n):
-        if _list[i] > avg:
-            _list[i] -= 1
-            break
-    for i in range(n):
-        if _list[i] < avg:
-            _list[i] += 1
-            is_changed = True
-            break
-    
-    if is_changed:
-        cnt += 1
-    else:
-        break
-
-print(cnt)
+print(blocks)
