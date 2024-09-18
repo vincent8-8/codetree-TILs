@@ -7,7 +7,7 @@ for i in range(n):
     if _list[i] == 1:
         if cnt == 0:
             cnt += 1
-            last = i
+            last = i + m
         elif last - m > i or last + m < i:
             cnt += 1
             last = i + m
