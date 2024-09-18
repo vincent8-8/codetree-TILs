@@ -1,13 +1,16 @@
 n, m = map(int, input().split())
 _list = list(map(int, input().split()))
 cnt = 0
+last = 0
 
 for i in range(n):
     if _list[i] == 1:
         if cnt == 0 and i == m:
             cnt += 1
-        elif i >= (1 + m * 2) * cnt:
+            last = i
+        elif last - m > i or last + m < i:
             cnt += 1
+            last = i + m
 
 people = _list.count(1)
 
