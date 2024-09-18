@@ -6,7 +6,7 @@ for i in range(n):
     if _list[i] == 1:
         if cnt == 0 and i == m:
             cnt += 1
-        elif i == (1 + m * 2) * cnt:
+        elif i >= (1 + m * 2) * cnt:
             cnt += 1
 
 people = _list.count(1)
