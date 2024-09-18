@@ -8,7 +8,11 @@ for i in range(n):
     elif i == (1 + m * 2) * cnt:
         cnt += 1
 
-if m == 0:
-    print(_list.count(1))
+people = _list.count(1)
+
+if people == 0:
+    print(0)
+elif m == 0:
+    print(people)
 else:
     print(cnt)
