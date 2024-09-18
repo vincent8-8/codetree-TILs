@@ -9,6 +9,6 @@ for i in range(n):
         cnt += 1
 
 if m == 0:
-    print(n)
+    print(_list.count(1))
 else:
     print(cnt)
