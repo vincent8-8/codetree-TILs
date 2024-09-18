@@ -8,4 +8,7 @@ for i in range(n):
     elif i == (1 + m * 2) * cnt:
         cnt += 1
 
-print(cnt)
+if m == 0:
+    print(n)
+else:
+    print(cnt)
