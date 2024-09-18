@@ -5,7 +5,7 @@ last = 0
 
 for i in range(n):
     if _list[i] == 1:
-        if cnt == 0 and i == m:
+        if cnt == 0:
             cnt += 1
             last = i
         elif last - m > i or last + m < i:
