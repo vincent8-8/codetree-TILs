@@ -10,7 +10,7 @@ d = 0
 def find_answer(a, b, c, d):
     if (a + b + c + d) in _list:
         if (a + b + c) in _list and (b + c + d) in _list: 
-            if (c + d) in _list:
+            if (c + d) in _list and (a + c) in _list and (b + d) in _list:
                 return True
     return False
 
