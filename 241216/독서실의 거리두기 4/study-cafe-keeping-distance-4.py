@@ -22,9 +22,9 @@ for zero_1 in zero_pos:
         indices_1 = [i for i, x in enumerate(after_sit_list) if x == "1"]
 
         for i in range(len(indices_1) - 1):
-            local_distance = indices_1[i + 1] - indices_1[i]
+            local_distance = indices_1[i + 1] - indices_1[i] + 1
             distance = min(local_distance, distance)
         
         maxOfMin = max(distance, maxOfMin)
 
-print(maxOfMin + 1)
+print(maxOfMin)
