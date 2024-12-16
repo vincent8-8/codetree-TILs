@@ -1,30 +1,27 @@
 n = int(input())
 _list = list(input())
-
-zero_pos = []
 maxOfMin = -1
 
-for i, elem in enumerate(_list):
-    if elem == "0":
-        zero_pos.append(i)
-
-for zero_1 in zero_pos:
-    for zero_2 in zero_pos:
-        if zero_1 == zero_2:
+for i in range(n):
+    if _list[i] == '1':
+        continue
+    for j in range(i + 1, n):
+        if _list[j] == '1':
             continue
-        
-        distance = 999
-        
-        after_sit_list = _list
-        after_sit_list[zero_1] = "1"
-        after_sit_list[zero_2] = "1"
+        min_dist = 101
 
-        indices_1 = [i for i, x in enumerate(after_sit_list) if x == "1"]
+        _list[i] = '1'
+        _list[j] = '1'
 
-        for i in range(len(indices_1) - 1):
-            local_distance = indices_1[i + 1] - indices_1[i] + 1
-            distance = min(local_distance, distance)
+        indices_of_1 = [k for k, elem in enumerate(_list) if elem == '1']
         
-        maxOfMin = max(distance, maxOfMin)
+        for l in range(len(indices_of_1) - 1):
+            local_dist = indices_of_1[l + 1] - indices_of_1[l]
+            min_dist = min(local_dist, min_dist)
+        
+        maxOfMin = max(min_dist, maxOfMin)
+
+        _list[i] = '0'
+        _list[j] = '0'
 
 print(maxOfMin)
