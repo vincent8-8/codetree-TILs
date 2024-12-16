@@ -18,6 +18,7 @@ for start in range(1, _list[0]):
         continue
     elif len(answer_set) != n:
         continue
+    break
     
 for elem in answer:
     print(elem, end=" ")
