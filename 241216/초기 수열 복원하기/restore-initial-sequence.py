@@ -8,6 +8,8 @@ for start in range(1, _list[0]):
 
     for i in range(n-1):
         answer.append(_list[i] - answer[-1])
+        if answer[-1] < 0:
+            break
 
     answer_set = set(answer)
     answer_set = sorted(answer_set)
