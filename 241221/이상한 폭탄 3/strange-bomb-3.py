@@ -21,7 +21,8 @@ for standard in _list:
             count += 1
         
     if max_count == count:
-        max_num = standard
+        if max_num < standard:
+            max_num = standard
     elif max_count < count:
         max_count = count
         max_num = standard
