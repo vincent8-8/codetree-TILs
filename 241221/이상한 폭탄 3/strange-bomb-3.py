@@ -17,7 +17,7 @@ for standard in _list:
             _list[i] = -1
     
     for j in range(len(same_num_list) - 1):
-        if (same_num_list[j + 1] - same_num_list[j]) < k:
+        if (same_num_list[j + 1] - same_num_list[j]) <= k:
             count += 1
         
     if max_count == count:
