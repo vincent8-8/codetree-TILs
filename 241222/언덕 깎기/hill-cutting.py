@@ -1,20 +1,16 @@
 n = int(input())
 _list = [int(input()) for _ in range(n)]
+answer = [0] * 84
 
-avg = sum(_list) // len(_list)
-cost = 0
+for i in range(0, 84):
+    for elem in _list:
+        changed = 0
 
-if avg > 50:
-    for i, elem in enumerate(_list):
-        if elem < avg - 17:
-            cost += (avg - 17) - elem
-        elif elem > avg:
-            cost += elem - avg
-else:
-    for i, elem in enumerate(_list):
-        if elem > avg + 17:
-            cost += elem - (avg - 17)
-        elif elem < avg:
-            cost += avg - elem
+        if elem > (i + 17):
+            changed =  (elem - (i + 17)) ** 2
+        elif elem < i:
+            changed =  (i - elem) ** 2
+        
+        answer[i] += changed
 
-print(cost - n)
+print(min(answer))
