@@ -1,19 +1,16 @@
 n = int(input())
 _list = [list(map(int, input().split())) for _ in range(n)]
 answer = 0
-_list.sort()
 
-for i in range(n):
-    count = 0
-    last_pos = _list[i][1]
-    for j in range(i + 1, n):
-        if _list[i][0] != _list[j][0]:
-            break
-        
-        if last_pos != _list[j][1]:
-            count += 1
-            last_pos = _list[j][1]
-        
-    answer += count
+for i in range(1, 11):
+    last_pos = -1
+    for elem in _list:
+        if elem[0] == i:
+            if last_pos == -1:
+                last_pos = elem[1]
+            else:
+                if last_pos != elem[1]:
+                    answer += 1
+                    last_pos = elem[1]
 
 print(answer)
