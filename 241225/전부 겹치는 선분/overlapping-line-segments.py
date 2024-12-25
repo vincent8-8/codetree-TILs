@@ -1,7 +1,7 @@
 n = int(input())
 _list = [list(map(int, input().split())) for _ in range(n)]
 
-_graph = [0] * 100
+_graph = [0] * 101
 
 for line in _list:
     for i in range(line[0], line[1] + 1):
