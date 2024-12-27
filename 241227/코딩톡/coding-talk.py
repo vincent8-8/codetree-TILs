@@ -10,6 +10,11 @@ for i in range(p - 1, m):
     if person in _people:
         _people.remove(person)
 
+for i in range(p - 1, -1, -1):
+    if _messages[i][1] ==_messages[p - 1][1]:
+        if _messages[i][0] in _people:
+            _people.remove(_messages[i][0])
+
 if _messages[p - 1][1] == '0':
     print("")
 else:
