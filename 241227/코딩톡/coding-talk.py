@@ -10,5 +10,8 @@ for i in range(p - 1, m):
     if person in _people:
         _people.remove(person)
 
-for person in _people:
-    print(person, end=" ")
+if _messages[p - 1][1] == '0':
+    print("")
+else:
+    for person in _people:
+        print(person, end=" ")
