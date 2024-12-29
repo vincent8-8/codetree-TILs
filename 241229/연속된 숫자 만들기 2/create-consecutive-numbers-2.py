@@ -1,21 +1,40 @@
 _list = list(map(int, input().split()))
-diff = max(_list) - min(_list)
+
 cost = 0
 
-if _list[1] - _list[0] < _list[2] - _list[1]:
-    while not diff == 2:
-        cost += 1
-        _list.sort()
-        _list[2] =  ((_list[0] + _list[1]) // 2) if (_list[0] + _list[1]) % 2 == 0 else ((_list[0] + _list[1]) // 2 + 1) 
-        
-        diff = max(_list) - min(_list)
+while True:
+    diff_a_b = _list[1] - _list[0]
+    diff_b_c = _list[2] - _list[1]
 
-else:
-    while not diff == 2:
-        cost += 1
-        _list.sort()
-        _list[0] =  ((_list[1] + _list[2]) // 2) if (_list[1] + _list[2]) % 2 == 0 else ((_list[1] + _list[2]) // 2 + 1) 
+    if diff_a_b == 1 and diff_b_c == 1:
+        break
 
-        diff = max(_list) - min(_list)
+    if diff_a_b < diff_b_c:
+        cost += 1
+
+        if diff_a_b == 1:
+            if (_list[1] + _list[2]) % 2 == 0:
+                _list[0] = (_list[1] + _list[2]) // 2
+            else:
+                _list[0] = (_list[1] + _list[2]) // 2 + 1
+        else:
+            if (_list[0] + _list[1]) % 2 == 0:
+                _list[2] = (_list[0] + _list[1]) // 2
+            else:
+                _list[2] = (_list[0] + _list[1]) // 2 + 1
+    else:
+        cost += 1
+        if diff_b_c == 1:
+            if (_list[0] + _list[1]) % 2 == 0:
+                _list[2] = (_list[0] + _list[1]) // 2
+            else:
+                _list[2] = (_list[0] + _list[1]) // 2 + 1
+        else:
+            if (_list[1] + _list[2]) % 2 == 0:
+                _list[0] = (_list[1] + _list[2]) // 2
+            else:
+                _list[0] = (_list[1] + _list[2]) // 2 + 1
+
+    _list.sort()
 
 print(cost)
