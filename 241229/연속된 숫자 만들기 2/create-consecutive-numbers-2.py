@@ -1,4 +1,5 @@
 _list = list(map(int, input().split()))
+_list.sort()
 diff_a_b = _list[1] - _list[0]
 diff_b_c = _list[2] - _list[1]
 
