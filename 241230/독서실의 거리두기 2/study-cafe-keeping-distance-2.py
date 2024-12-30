@@ -1,30 +1,27 @@
 n = int(input())
 _input = input()
-curr_people = []
 seats = []
+min_distance = []
 
 for i in range(len(_input)):
     seats.append(int(_input[i]))
 
-for i, elem in enumerate(seats):
-    if elem == 1:
-        curr_people.append(i)
+for i in range(0, n):
+    if seats[i] == 1:
+        continue
+    else:
+        seats[i] = 1
+        posisions = []
+        distance = []
 
-seats[0] = 1
-seats[-1] = 1
+        for j, elem in enumerate(seats):
+            if elem == 1:
+                posisions.append(j)
+        
+        for j in range(len(posisions) - 1):
+            distance.append(posisions[j + 1] - posisions[j])
+        
+        seats[i] = 0
+        min_distance.append(min(distance))
 
-for i in range(len(curr_people) - 1):
-    new_person = (curr_people[i + 1] + curr_people[i]) // 2
-    seats[new_person] = 1
-
-curr_people = []
-distance = []
-
-for i, elem in enumerate(seats):
-    if elem == 1:
-        curr_people.append(i)
-
-for i in range(len(curr_people) - 1):
-    distance.append(curr_people[i + 1] - curr_people[i])
-
-print(max(distance))
+print(max(min_distance))
