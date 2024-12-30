@@ -14,7 +14,7 @@ seats[0] = 1
 seats[-1] = 1
 
 for i in range(len(curr_people) - 1):
-    new_person = (curr_people[i + 1] - curr_people[i]) // 2
+    new_person = (curr_people[i + 1] + curr_people[i]) // 2
     seats[new_person] = 1
 
 curr_people = []
