@@ -10,7 +10,7 @@ for i in range(1, n):
         answer = i
         break
     
-if len(sorted_list) > 3 and sorted_list[answer] == sorted_list[answer + 1]:
+if len(sorted_list) > (answer + 1) and sorted_list[answer] == sorted_list[answer + 1]:
     print(-1)
 else:
     sec_min = sorted_list[answer]
