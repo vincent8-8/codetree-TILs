@@ -1,0 +1,12 @@
+_graph = [input() for _ in range(10)]
+l_b_cordinate = []
+
+for row in range(10):
+    for column in range(10):
+        if _graph[row][column] == 'B':
+            l_b_cordinate.append([row, column])
+        elif _graph[row][column] == 'L':
+            l_b_cordinate.append([row, column])
+
+distance = abs(l_b_cordinate[0][0] - l_b_cordinate[1][0]) + abs(l_b_cordinate[0][1] - l_b_cordinate[1][1]) - 1
+print(distance)
