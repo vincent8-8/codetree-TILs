@@ -7,13 +7,21 @@ for row in range(10):
             l_b_cordinate.append([row, column])
         elif _graph[row][column] == 'L':
             l_b_cordinate.append([row, column])
+        elif _graph[row][column] == 'R':
+            l_b_cordinate.append([row, column])
 
-ver_dist = (abs(l_b_cordinate[0][0] - l_b_cordinate[1][0]) - 1) if abs(l_b_cordinate[0][0] - l_b_cordinate[1][0]) > 1 else 0
-hor_dist = (abs(l_b_cordinate[0][1] - l_b_cordinate[1][1]) - 1) if abs(l_b_cordinate[0][1] - l_b_cordinate[1][1]) > 1 else 0
+ver_dist = (abs(l_b_cordinate[0][0] - l_b_cordinate[2][0]) - 1) if abs(l_b_cordinate[0][0] - l_b_cordinate[2][0]) > 1 else 0
+hor_dist = (abs(l_b_cordinate[0][1] - l_b_cordinate[2][1]) - 1) if abs(l_b_cordinate[0][1] - l_b_cordinate[2][1]) > 1 else 0
 
-if l_b_cordinate[0][0] == l_b_cordinate[1][0]:
-    print(abs(l_b_cordinate[0][1] - l_b_cordinate[1][1]) - 1)
-elif l_b_cordinate[0][1] == l_b_cordinate[1][1]:
-    print(abs(l_b_cordinate[0][0] - l_b_cordinate[1][0]) - 1)
+if l_b_cordinate[0][0] == l_b_cordinate[2][0]:
+    if l_b_cordinate[0][0] == l_b_cordinate[1][0]:
+        print(abs(l_b_cordinate[0][1] - l_b_cordinate[2][1]) + 1)
+    else:
+        print(abs(l_b_cordinate[0][1] - l_b_cordinate[2][1]) - 1)
+elif l_b_cordinate[0][1] == l_b_cordinate[2][1]:
+    if l_b_cordinate[0][1] == l_b_cordinate[1][1]:
+        print(abs(l_b_cordinate[0][0] - l_b_cordinate[2][0]) + 1)
+    else:
+        print(abs(l_b_cordinate[0][0] - l_b_cordinate[2][0]) - 1)
 else:
     print(ver_dist + hor_dist + 1)
