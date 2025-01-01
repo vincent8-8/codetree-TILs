@@ -21,7 +21,7 @@ for row in range(10):
 
 if bx == lx:
     if bx == rx:
-        if bx < rx < lx or lx < rx < bx:
+        if by < ry < ly or ly < ry < by:
             distance = abs(by - ly) + 1
         else:
             distance = abs(by - ly) - 1
@@ -29,12 +29,12 @@ if bx == lx:
         distance = abs(by - ly) - 1
 elif by == ly:
     if by == ry:
-        if by < ry < ly or ly < ry < by:
+        if bx < rx < lx or lx < rx < bx:
             distance = abs(bx - lx) + 1
         else:
             distance = abs(bx - lx) - 1
     else:
-        distance = abs(bx - ly) - 1
+        distance = abs(bx - lx) - 1
 else:
     distance = abs(bx - lx) + abs(by - ly) - 1
 
