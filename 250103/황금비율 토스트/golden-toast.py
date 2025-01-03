@@ -1,16 +1,12 @@
-n, m = map(int, input().split())
-s = input()
-
-commands = [list(input().split()) for _ in range(m)]
-
-# Write your code here!
-
+# Node 클래스를 만들어줍니다.
 class Node:
     def __init__(self, data):
-        self.data = data
-        self.next = None
+        self.data = data 
+        self.next = None 
         self.prev = None
-    
+
+
+# 이중 연결 리스트 클래스를 만들어줍니다.
 class DoublyLinkedList:
     def __init__(self):
         self.END = Node(-1)                # 구현의 편의를 위해 dummy 값을 넣어놓고 시작합니다.
@@ -73,36 +69,37 @@ class DoublyLinkedList:
     def end(self):
         return self.tail
 
-l = DoublyLinkedList()
 
+# 변수 선언 및 입력:
+n, m = tuple(map(int, input().split()))
+s = input()
+
+# 연결리스트 정의
+l = DoublyLinkedList()
 for c in s:
     l.push_back(c)
 
+# iterator 정의
 it = l.end()
 
-for cmd in commands:
-    if len(cmd) == 1:
-        if cmd[0] == 'L':
-            if it == l.begin():
-                pass
-            else:
-                it = it.prev
-        elif cmd[0] == 'R':
-            if it == l.end():
-                pass
-            else:
-                it = it.next
-        else:
-            if it == l.end():
-                pass
-            else:
-                l.erase(it)
-        
+for _ in range(m):
+    command = input()
+    
+    if command.startswith("L"):
+        if it != l.begin():        # 빵들의 맨 앞이 아니라면
+            it = it.prev           # 앞으로 이동합니다.
+    elif command.startswith("R"):
+        if it != l.end():          # 빵들의 맨 뒤가 아니라면
+            it = it.next           # 뒤로 이동합니다.
+    elif command.startswith("D"):
+        if it != l.end():          # 빵들의 맨 뒤가 아니라면
+            it = l.erase(it)       # 바로 뒤에 있는 빵을 제거합니다.
     else:
-        l.insert(it, cmd[1])
+        _, c = command.split()
+        l.insert(it, c)            # 가리키는 위치에 문자 c를 추가합니다.
 
+# 출력:
 it = l.begin()
-
 while it != l.end():
     print(it.data, end="")
     it = it.next
