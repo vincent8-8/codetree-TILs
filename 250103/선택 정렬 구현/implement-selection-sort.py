@@ -2,14 +2,17 @@ n = int(input())
 arr = list(map(int, input().split()))
 
 # Write your code here!
-for i in range(n):
-    min_val = min(arr[i: n])
-    idx = arr.index(min_val)
+for i in range(n - 1):
+    minimum = i
     
-    if arr[i] > arr[idx]:
+    for j in range(i + 1, n):
+        if arr[minimum] > arr[j]:
+            minimum = j
+    
+    if minimum != i:
         tmp = arr[i]
-        arr[i] = arr[idx]
-        arr[idx] = tmp
+        arr[i] = arr[minimum]
+        arr[minimum] = tmp
 
 for elem in arr:
     print(elem, end=" ")
